@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand Color Tokens */
+  --primary: #073B2A;       /* deep emerald — headings, primary text accents, hover fills */
+  --secondary: #0B6045;     /* mid emerald — links, secondary actions */
+  --accent: #D4AF37;        /* gold — kickers, dividers, icon outlines, hover highlights */
+  --bg: #F5F8F6;            /* pale sage — base background */
+  --ivory: #FBF8F1;         /* warm off-white — alternating section backgrounds, card fill */
+  --text: #17231E;          /* near-black — body copy */
+  --muted: #5B6B63;         /* muted sage-grey — subtext, descriptions */
+  --hairline: rgba(7, 59, 42, 0.14); /* thin structural borders */
+  --gold-wash: rgba(212, 175, 55, 0.12); /* soft gold background tint */
+
+  /* Backward Compatibility Mappings */
+  --primary-green: var(--primary);
+  --secondary-green: var(--secondary);
+  --investment-gold: var(--accent);
+  --gold-hover: #B8941F;
+  --main-bg: var(--bg);
+  --card-bg: var(--ivory);
+  --text-primary: var(--text);
+  --text-secondary: var(--muted);
+  --border-color: var(--hairline);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Heritage Editorial Typography */
+h1, h2, h3, h4, h5, h6, .serif-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+
+/* Letterhead Kicker Mark (No All-Caps Badges) */
+.kicker {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.kicker::before,
+.kicker::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--accent);
+}
+
+/* Understated Serif-Italic Links with Gold Underline */
+.editorial-link {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--secondary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.editorial-link:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* Outlined Heritage Icons (1px border, square or circular) */
+.icon-outlined-square {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid var(--accent);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: var(--ivory);
+  transition: all 0.25s ease;
+}
+
+.icon-outlined-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: var(--ivory);
+  transition: all 0.25s ease;
+}
+
+/* Printed Ledger Flush Panel Grid System */
+.ledger-grid {
+  display: grid;
+  background-color: var(--hairline);
+  gap: 1px; /* Background hairline border gap */
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ledger-panel {
+  background-color: var(--ivory);
+  padding: 36px 30px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Controlled Inversion "Rich Moment" on Panel Hover */
+.ledger-panel:hover {
+  background-color: var(--primary);
+  color: var(--ivory);
+}
+
+.ledger-panel:hover h1,
+.ledger-panel:hover h2,
+.ledger-panel:hover h3,
+.ledger-panel:hover h4,
+.ledger-panel:hover .panel-title,
+.ledger-panel:hover .panel-desc {
+  color: var(--ivory) !important;
+}
+
+.ledger-panel:hover .icon-outlined-square,
+.ledger-panel:hover .icon-outlined-circle {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(212, 175, 55, 0.15);
+}
+
+.ledger-panel:hover .editorial-link {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Sharp / Barely Rounded Heritage Buttons */
+.btn-heritage-primary {
+  background-color: var(--primary);
+  color: var(--ivory);
+  border: 1px solid var(--primary);
+  padding: 12px 28px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-heritage-primary:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--ivory);
+}
+
+.btn-heritage-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 12px 28px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-heritage-outline:hover {
+  border-color: var(--accent);
+  color: var(--primary);
+  background-color: var(--gold-wash);
+}
+
+/* Accessible Focus States */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Optimization */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
